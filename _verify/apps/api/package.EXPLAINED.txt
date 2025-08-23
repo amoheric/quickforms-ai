@@ -1,0 +1,18 @@
+I can't put comments inside JSON, so here's what each part means:
+
+- name/version/type: standard package metadata (type 'module' enables ES modules)
+- scripts:
+  - dev: run the API in watch-mode with ts-node-dev (fast dev loop)
+  - build: compile TypeScript -> JS into dist/
+  - start: run the compiled server (production mode)
+  - test: run Vitest tests (we have a unit stub ready)
+- dependencies:
+  - express: HTTP server/router
+  - zod: schema validation for payloads
+  - cors: handle browser cross-origin requests
+  - dotenv: load .env vars (PORT, CORS_ORIGIN)
+- devDependencies:
+  - typescript: TS compiler
+  - ts-node-dev: fast dev runner for TS
+  - vitest: test runner
+  - supertest: HTTP test helper for integration tests
