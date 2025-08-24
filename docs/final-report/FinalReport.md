@@ -106,7 +106,7 @@ Testing included unit, integration, and system-level validation:
 | T3      | Form Submission  | Empty email field                | Error message shown          | ✅ Pass |
 
 📎 Refer to `/docs/reports/testing.pdf` for the full Testing Report.
-![Software Testing Report](https://github.com/amoheric/quickforms-ai/blob/main/docs/diagrams/)
+![Software Testing Report](https://github.com/amoheric/quickforms-ai/blob/main/docs/diagrams/Passed%20test.png)
 
 ---
 

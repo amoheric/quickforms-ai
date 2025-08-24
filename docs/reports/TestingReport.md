@@ -126,6 +126,13 @@ Executed real-world usage simulations:
 
 ---
 
+![Software Testing Failed Report](https://github.com/amoheric/quickforms-ai/blob/main/docs/diagrams/First%20test%20failed.png)
+
+
+![Software Testing Passed Report](https://github.com/amoheric/quickforms-ai/blob/main/docs/diagrams/Passed%20test.png)
+
+---
+
 ## 10. 📘 Lessons Learned
 
 - TypeScript type safety catches bugs early  
