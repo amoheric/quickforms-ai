@@ -7,9 +7,11 @@
     "dev": "concurrently -n WEB,API -c blue,green \"npm:dev:web\" \"npm:dev:api\"",
     "build:web": "npm run build --prefix apps/web",
     "build:api": "npm run build --prefix apps/api",
-    "build": "npm run build:web && npm run build:api"
+    "build": "npm run build:web && npm run build:api",
+    "prepare": "husky"
   },
   "devDependencies": {
-    "concurrently": "^9.0.0"
+    "concurrently": "^9.0.0",
+    "husky": "^9.1.7"
   }
 }

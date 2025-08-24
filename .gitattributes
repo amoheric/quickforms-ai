@@ -1,0 +1,3 @@
+# Keep husky hooks LF so Git bash can execute them
+.husky/* text eol=lf
+*.sh       text eol=lf

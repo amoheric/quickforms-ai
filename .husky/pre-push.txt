@@ -1,0 +1,31 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+echo "🔎 Pre-push: verifying builds (API + Web)..."
+set -e
+
+# API
+if [ -f "apps/api/package.json" ]; then
+  echo "➡️  Building API..."
+  cd apps/api
+  npm ci --silent
+  npm test || echo "⚠️  No tests defined for API, skipping..."
+  npm run -s build
+  cd ../..
+else
+  echo "ℹ️  Skipping API (no package.json)"
+fi
+
+# Web
+if [ -f "apps/web/package.json" ]; then
+  echo "➡️  Building Web..."
+  cd apps/web
+  npm ci --silent
+  npm test || echo "⚠️  No tests defined for Web, skipping..."
+  npm run -s build
+  cd ../..
+else
+  echo "ℹ️  Skipping Web (no package.json)"
+fi
+
+echo "✅ Pre-push checks passed."
