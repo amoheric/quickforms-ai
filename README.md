@@ -24,28 +24,43 @@ It simplifies the creation of custom forms using natural language, auto-generate
 ---
 
 ## 📚 Table of Contents
-- [🎥 Demo & Screenshots](#-demo--screenshots)
-- [🚀 Features](#-features)
-- [🏗️ Tech Stack](#️-tech-stack)
-- [📂 Project Structure](#-project-structure)
-- [⚙️ Getting Started](#️-getting-started)
-- [🧪 Testing](#-testing)
-- [📖 Documentation](#-documentation)
-- [📦 Packaging](#-packaging)
-- [🔮 Roadmap](#-roadmap)
-- [👥 Development Process](#-development-process)
-- [🎓 Course Context](#-course-context)
-- [🏆 Lessons Learned](#-lessons-learned)
-- [📜 License](#-license)
+- [📋 QuickForms AI – Smart Form \& Workflow Builder](#-quickforms-ai--smart-form--workflow-builder)
+  - [📌 Overview](#-overview)
+    - [✨ Highlights:](#-highlights)
+  - [📚 Table of Contents](#-table-of-contents)
+  - [🎥 Demo \& Screenshots](#-demo--screenshots)
+  - [🚀 Features](#-features)
+  - [🏗️ Tech Stack](#️-tech-stack)
+  - [📂 Project Structure](#-project-structure)
+  - [⚙️ Getting Started](#️-getting-started)
+    - [1. Clone Repo](#1-clone-repo)
+    - [2. Install Dependencies](#2-install-dependencies)
+    - [3. Set Up Environment](#3-set-up-environment)
+    - [4. Run Locally](#4-run-locally)
+  - [🧪 Testing](#-testing)
+    - [✔ Coverage:](#-coverage)
+  - [📖 Documentation](#-documentation)
+  - [📦 Packaging](#-packaging)
+  - [🔮 Roadmap](#-roadmap)
+  - [👥 Development Process](#-development-process)
+  - [🎓 Course Context](#-course-context)
+  - [🏆 Lessons Learned](#-lessons-learned)
+  - [📜 License](#-license)
 
 ---
 
 ## 🎥 Demo & Screenshots
-- 🎬 YouTube Demo: *(Insert Link)*
+- 🎬 YouTube Demo: 
+  - ✅ [*[YouTube Demo:](https://youtu.be/yVylI9AM284)*
+- PowerPoint Presentation: 
+  - ✅ [*[Presentation:](/docs/Power-point/QuickForms(Power-point)-AI-Smart-Form-and-Workflow-Builder-Pptx.pdf)*
 - 🖼️ Screenshots:
   - ✅ Form Builder UI
-  - ✅ Response Dashboard
+  ![User Interface Mockups](/docs/diagrams/1.User%20Interface%20Mockups%20.png)
+  - ✅ AI Generated Fields & Response Dashboard
+  ![AI Generated Fields](/docs/diagrams/3.%20User%20Interface%20Mockups%20(When%20AI%20Assist%20(mock)%20added%20suggested%20fields%20based%20on%20the%20title.)%20.png)
   - ✅ CSV Export View
+  [Software Testing Passed Report](/docs/Submission%20Export%20Example/Downloadable-submissions-docs.csv)
 
 ---
 
@@ -145,13 +160,13 @@ npm run test
 
 | 📘 File                  | Path                             |
 |--------------------------|----------------------------------|
-| Final Report             | `/docs/final-report/report.pdf` |
-| Developer Guide          | `/docs/developer-guide/*.pdf`   |
-| User Manual              | `/docs/user-manual/*.pdf`       |
-| Testing Report           | `/docs/reports/testing.pdf`     |
-| Code Review Summary      | `/docs/reports/code-review.pdf` |
-| UML Diagrams             | `/docs/diagrams/uml.pdf`        |
-| SRS (Requirements Spec)  | `/docs/reports/SRS.pdf`         |
+| Final Report             | `/docs/final-report/FinalReport.md` |
+| Developer Guide          | `/docs/developer-guide/DeveloperGuide.md`   |
+| User Manual              | `/docs/user-manual/UserManual.md`       |
+| Testing Report           | `/docs/reports/TestingReport.md`     |
+| Code Review Summary      | `/docs/code-review/CodeReview.md` |
+| UML Diagrams             | `/docs/diagrams`        |
+| SRS (Requirements Spec)  | `/docs/Schema/Schema.md`         |
 
 ---
 

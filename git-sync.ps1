@@ -1,50 +1,38 @@
-# git-sync.ps1 — stage, commit, pull --rebase, push (ASCII-safe)
+﻿param([string]$Message)
 
-param([string]$Message)
+function WriteInfo { param($m) Write-Host $m -ForegroundColor Cyan }
+function WriteWarn { param($m) Write-Host $m -ForegroundColor Yellow }
+function WriteOk   { param($m) Write-Host $m -ForegroundColor Green }
+function WriteErr  { param($m) Write-Host $m -ForegroundColor Red }
 
-function Get-Trimmed($s) { if ($null -eq $s) { "" } else { $s.Trim() } }
-
-# Ensure we're in a git repo
-git rev-parse --is-inside-work-tree *> $null
-if ($LASTEXITCODE -ne 0) {
-  Write-Host "ERROR: Not inside a git repository." -ForegroundColor Red
-  exit 1
-}
-
-Write-Host "Status:" -ForegroundColor Cyan
-git status
-
-Write-Host ""
-Write-Host "Staging all changes..." -ForegroundColor Cyan
+WriteInfo "Staging all changes..."
 git add -A
 
-# If nothing staged, just pull+push and exit
+# Detect if anything is staged
 $staged = (git diff --cached --name-only)
+
 if (-not $staged) {
-  Write-Host "No staged changes. Pulling and pushing only..." -ForegroundColor Yellow
+  WriteWarn "No staged changes. Pulling and pushing only..."
   git pull --rebase origin main
+  if ($LASTEXITCODE -ne 0) { WriteErr "Rebase failed. Resolve conflicts and re-run."; exit 1 }
   git push
-  Write-Host ""
-  Write-Host "Sync complete (no new commit)." -ForegroundColor Green
+  if ($LASTEXITCODE -ne 0) { WriteErr "Push failed."; exit 1 }
+  WriteOk "Sync complete (no new commit)."
   exit 0
 }
 
-# Commit message
-$Message = Get-Trimmed $Message
-if ([string]::IsNullOrWhiteSpace($Message)) {
-  $Message = Read-Host "Commit message"
-  $Message = Get-Trimmed $Message
-}
 if ([string]::IsNullOrWhiteSpace($Message)) { $Message = "chore: update" }
 
-Write-Host "Commit: $Message" -ForegroundColor Cyan
+WriteInfo "Commit: $Message"
 git commit -m "$Message"
+if ($LASTEXITCODE -ne 0) { WriteErr "Commit failed."; exit 1 }
 
-Write-Host "Pull (rebase)..." -ForegroundColor Cyan
+WriteInfo "Pull (rebase) from origin/main..."
 git pull --rebase origin main
+if ($LASTEXITCODE -ne 0) { WriteErr "Rebase failed. Resolve conflicts: git status -> edit -> git add -> git rebase --continue"; exit 1 }
 
-Write-Host "Push..." -ForegroundColor Cyan
+WriteInfo "Push to origin/main..."
 git push
+if ($LASTEXITCODE -ne 0) { WriteErr "Push failed."; exit 1 }
 
-Write-Host ""
-Write-Host "Sync complete." -ForegroundColor Green
+WriteOk "Sync complete."
