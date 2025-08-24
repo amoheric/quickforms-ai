@@ -72,7 +72,7 @@ QuickForms AI uses a **Layered MVC Architecture**:
 | Database   | Prisma ORM + SQLite/Postgres | Schema + data persistence        |
 | AI Layer   | OpenAI API                   | Converts prompts to field schema |
 
-🔗 **Architecture Diagram**: ![Lucidchart MVC Diagram](https://lucid.app/lucidchart/d8e710bf-4389-41f4-a888-cc2ecd8e624f/edit?invitationId=inv_9112dfff-f1b4-4c81-b86f-ce0fc562cd2d)
+🔗 **Architecture Diagram**: ![Layered MVC Architecture](https://github.com/amoheric/quickforms-ai/blob/main/docs/diagrams/UML%20Diagram_%20MVC%20_%20Layered%20Architecture.png)
 
 ---
 
@@ -80,10 +80,10 @@ QuickForms AI uses a **Layered MVC Architecture**:
 
 | Diagram Type        | Description                                         | Link |
 |---------------------|-----------------------------------------------------|------|
-| Use Case Diagram     | Actor interactions (User, AI, DB)                  | ![Use Case Diagram – Shows how actors (users, AI service, database) interact with the system.](https://lucid.app/lucidchart/a958eb5a-2790-42cb-816e-fdb398adc52e/edit?invitationId=inv_0231e5f8-16bd-4074-8d77-3396ada87276) |
-| Class Diagram        | Models: Form, Field, Response                      | ![Class Diagram – Represents system entities (Form, Field, Response, User) and their relationships.](https://lucid.app/lucidchart/55b5dab0-e8ed-4ffc-944c-bedf769bfb33/edit?invitationId=inv_edfc7d03-f8fb-49f1-903b-395032d01eaf) |
-| Sequence Diagram     | Full flow: form creation → submission              | ![Sequence Diagram – Demonstrates the workflow of a form submission from frontend to backend.](https://lucid.app/lucidchart/9ebac5f8-2750-4c49-a818-a68a9c01148f/edit?invitationId=inv_a858d1aa-8893-44db-b14a-b05e9f610924) |
-| Deployment Diagram   | Infrastructure layout (frontend, backend, DB)      | ![•	Deployment Diagram – Visualizes how QuickForms AI is deployed across client, server, and database environments.](https://lucid.app/lucidchart/1c700ff5-06c7-4310-b4ef-26c5ae98bbab/edit?invitationId=inv_aa12924c-587a-43bd-adfd-b25f6b2aed0f) |
+| Use Case Diagram     | Actor interactions: Shows how actors (users, AI service, database) interact with the system                  | ![Use Case Diagram](https://github.com/amoheric/quickforms-ai/blob/main/docs/diagrams/UML%20Use%20Case%20Diagram%20for%20QuickForms%20AI%20(1).png) |
+| Class Diagram        | Models: Represents system entities (Form, Field, Response, User) and their relationships.                      | ![Class Diagram](https://github.com/amoheric/quickforms-ai/blob/main/docs/diagrams/UML%20Class%20Diagram%20for%20QuickForms%20AI.png) |
+| Sequence Diagram     | Full flow: Demonstrates the workflow of a form submission from frontend to backend.            | ![Sequence Diagram](https://github.com/amoheric/quickforms-ai/blob/main/docs/diagrams/UML%20sequence_%20Form%20Submission%20Workflow.png) |
+| Deployment Diagram   | Infrastructure layout (frontend, backend, DB) Visualizes how QuickForms AI is deployed across client, server, and database environments.     | ![Deployment Diagram](https://github.com/amoheric/quickforms-ai/blob/main/docs/diagrams/UML%20deployment%20diagram%20example.png) |
 
 ---
 
@@ -91,7 +91,7 @@ QuickForms AI uses a **Layered MVC Architecture**:
 
 The relational schema consists of `Form`, `Field`, and `Response` tables managed via Prisma.
 
-🔗 ![Schema Diagram](https://lucid.app/lucidchart/bb13c9f2-ef7c-4fa7-b07a-97e29cee2578/edit?invitationId=inv_6d3aa4a2-01bd-46cd-8820-9fd786dff201)
+🔗 ![Schema Diagram](https://github.com/amoheric/quickforms-ai/blob/main/docs/diagrams/QUICKFORM%20AI%20Database%20Schema%20for%20Form%20Management.png)
 
 ---
 
@@ -106,6 +106,7 @@ Testing included unit, integration, and system-level validation:
 | T3      | Form Submission  | Empty email field                | Error message shown          | ✅ Pass |
 
 📎 Refer to `/docs/reports/testing.pdf` for the full Testing Report.
+![Software Testing Report](https://github.com/amoheric/quickforms-ai/blob/main/docs/diagrams/)
 
 ---
 

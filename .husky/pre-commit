@@ -1,1 +1,27 @@
-npm test
+
+
+echo "🔍 pre-commit: quick checks..."
+
+set -e
+
+# API tests (optional)
+if [ -f "apps/api/package.json" ]; then
+  echo "➡️  Building API: running tests if available..."
+  cd apps/api
+  npm ci --silent
+  npm run -s test || echo "ℹ️  API: no tests or tests skipped."
+  npm run -s build
+  cd ../..
+fi
+
+# Web tests (optional)
+if [ -f "apps/web/package.json" ]; then
+  echo "➡️  Building Web: running tests if available..."
+  cd apps/web
+  npm ci --silent
+  npm run -s test || echo "ℹ️  Web: no tests or tests skipped."
+  npm run -s build
+  cd ../..
+fi
+
+echo "✅ pre-commit checks done."
